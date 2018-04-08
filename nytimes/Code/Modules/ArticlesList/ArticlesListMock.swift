@@ -21,9 +21,10 @@ class ArticlesListMock: ArticlesListAPIClientProtocol {
             articleModel.section = "section" + String(i)
             articleModel.title = "title" + String(i)
             articleModel.publishDate = Date()
-            articles.append(articleModel)
+//            articles.append(articleModel)
         }
-        success(articles)
+//        success(articles)
+        failure()
         
     }
     

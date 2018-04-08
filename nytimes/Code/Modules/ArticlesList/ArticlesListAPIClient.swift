@@ -63,10 +63,21 @@ class ArticlesListAPIClient: BaseAPIClient, ArticlesListAPIClientProtocol {
                                         }
                                     }
                                 }
-                                
                             }
-                            
-                            articles.append(articleModel)
+                            if searchModel.typeOfArticle == .mostShared {
+                                if let orgFacet = resultDictionary["org_facet"] as? [String] {
+                                    if let sharedTwitter = searchModel.sharedTwitter,
+                                        let sharedFacebook = searchModel.sharedFacebook {
+                                        if sharedTwitter && orgFacet.contains("TWITTER") {
+                                            articles.append(articleModel)
+                                        } else if sharedFacebook && orgFacet.contains("FACEBOOK INC") {
+                                           articles.append(articleModel)
+                                        }
+                                    }
+                                }
+                            } else {
+                                articles.append(articleModel)
+                            }
                         }
                     }
                     success(articles)

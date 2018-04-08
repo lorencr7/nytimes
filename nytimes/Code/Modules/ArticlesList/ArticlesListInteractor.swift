@@ -45,7 +45,7 @@ class ArticlesListInteractor: ArticlesListInteractorInputProtocol {
         self.dataManager.getArticles(success: { (articles: [ArticleModel]) in
             self.presenter?.showArticles(articles: articles)
         }) { 
-            //TODO manage error
+            self.presenter?.showError()
         }
     }
     

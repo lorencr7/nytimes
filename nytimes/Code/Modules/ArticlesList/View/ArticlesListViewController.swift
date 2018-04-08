@@ -21,6 +21,10 @@ protocol ArticlesListViewControllerProtocol: BaseViewControllerProtocol {
     func showLoading()
     
     func hideLoading()
+    func showEmptyView()
+    func hideEmptyView()
+    func showErrorView()
+    func hideErrorView()
 }
 
 
@@ -66,7 +70,38 @@ class ArticlesListViewController: BaseViewController, ArticlesListViewController
         self.tvArticles.isHidden = false
     }
     
+    func showEmptyView() {
+        self.showErrorText(text: "No articles available".localized)
+    }
+    
+    func hideEmptyView() {
+        self.hideErrorText()
+    }
+    
+    func showErrorView() {
+        self.showErrorText(text: "Something went wrong".localized)
+    }
+    
+    func hideErrorView() {
+        self.hideErrorText()
+    }
+    
     // MARK: - Private methods
+    
+    private func showErrorText(text: String) {
+        let labelHeight:CGFloat = 30.0
+        let label = UILabel(frame: CGRect(x: 0,
+                                          y: 0,
+                                          width: self.tvArticles.frame.size.width,
+                                          height: labelHeight))
+        label.textAlignment = .center
+        label.text = text
+        self.tvArticles.tableHeaderView = label
+    }
+    
+    private func hideErrorText() {
+        self.tvArticles.tableHeaderView = nil
+    }
     
     private func configViews() {
         self.title = "Articles".localized
@@ -80,6 +115,7 @@ class ArticlesListViewController: BaseViewController, ArticlesListViewController
         
         self.tvArticles.dataSource = self
         self.tvArticles.delegate = self
+        self.tvArticles.tableFooterView = UIView()
     }
     
     

@@ -12,7 +12,12 @@ protocol SearchConfigDataManagerProtocol: class {
     /**
      * Add here your methods for communication INTERACTOR -> DATA_MANAGER
      */
+    
+    func getTypeOfArticles() -> [TypeOfArticle]
+    func getPeriods() -> [Period]
 }
+
+
 
 
 class SearchConfigDataManager: BaseDataManager, SearchConfigDataManagerProtocol {
@@ -20,6 +25,10 @@ class SearchConfigDataManager: BaseDataManager, SearchConfigDataManagerProtocol 
     // MARK: - Properties
     
     private var apiClient: SearchConfigAPIClientProtocol
+    
+    private let typeOfArticles: [TypeOfArticle] = [.mostEmailed,.mostShared,.mostViewed]
+    
+    private let periods: [Period] = [.oneDay,.sevenDays,.thirtyDays]
     
     
     // MARK: - Object lifecycle
@@ -31,6 +40,14 @@ class SearchConfigDataManager: BaseDataManager, SearchConfigDataManagerProtocol 
     
     
     // MARK: - SearchConfigDataManagerProtocol
+    
+    func getTypeOfArticles() -> [TypeOfArticle] {
+        return self.typeOfArticles
+    }
+    
+    func getPeriods() -> [Period] {
+        return self.periods
+    }
 }
 
 

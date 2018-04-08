@@ -14,6 +14,9 @@ protocol SearchConfigInteractorInputProtocol: class {
      */
     
     func set(presenter: SearchConfigInteractorOutputProtocol)
+    func getTypeOfArticles() -> [TypeOfArticle]
+    func getPeriods() -> [Period]
+    func typeOfArticlesChanged(typeOfArticle: TypeOfArticle)
 }
 
 
@@ -38,5 +41,23 @@ class SearchConfigInteractor: SearchConfigInteractorInputProtocol {
     func set(presenter: SearchConfigInteractorOutputProtocol) {
         
         self.presenter = presenter
+    }
+    
+    func getTypeOfArticles() -> [TypeOfArticle] {
+        return self.dataManager.getTypeOfArticles()
+    }
+    
+    func getPeriods() -> [Period] {
+        return self.dataManager.getPeriods()
+    }
+    
+    func typeOfArticlesChanged(typeOfArticle: TypeOfArticle) {
+        switch typeOfArticle {
+        case .mostShared:
+            self.presenter?.showArticleSource()
+        default:
+            self.presenter?.hideArticleSource()
+        }
+
     }
 }

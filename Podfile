@@ -7,6 +7,7 @@ target 'nytimes' do
 
   # Pods for nytimes
   pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage', '~> 3.3'
 
   target 'nytimesTests' do
     inherit! :search_paths

@@ -1,5 +1,5 @@
 //
-//  String+Extensions.swift
+//  Date+Extensions.swift
 //  nytimes
 //
 //  Created by lorenzo villarroel perez on 8/4/18.
@@ -8,18 +8,13 @@
 
 import Foundation
 
-
-extension String {
+extension Date {
     
-    public var localized: String {
-        return NSLocalizedString(self, comment: "")
-    }
-    
-    func toDate(with format: String = "ddMMyyyy", localeIdentifier: String = "es_ES") -> Date? {
+    func toString(format: String, localeIdentifier: String = "es_ES") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: localeIdentifier)
         dateFormatter.dateFormat = format
-        return dateFormatter.date(from: self)
+        return dateFormatter.string(from: self)
     }
-
+    
 }

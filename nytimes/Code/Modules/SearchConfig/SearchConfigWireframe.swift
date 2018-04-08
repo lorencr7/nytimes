@@ -33,6 +33,10 @@ class SearchConfigWireframe: BaseWireframe, BaseWireframeProtocol {
         return SearchConfigDataManager(apiClient: apiClient)
     }
     
+    private var articlesListWireframe: ArticlesListWireframe {
+        return ArticlesListWireframe()
+    }
+    
     
     // MARK: - Private methods
     
@@ -41,7 +45,7 @@ class SearchConfigWireframe: BaseWireframe, BaseWireframeProtocol {
     }
     
     private func createPresenter(with view: SearchConfigViewController, interactor: SearchConfigInteractor ) -> SearchConfigPresenter {
-        return SearchConfigPresenter(view: view, interactor: interactor)
+        return SearchConfigPresenter(view: view, interactor: interactor, articlesListWireframe: articlesListWireframe)
     }
     
     // MARK: - BaseWireframeProtocol

@@ -36,6 +36,7 @@ class SearchConfigPresenter: BasePresenter, SearchConfigPresenterProtocol, Searc
     
     private weak var view: SearchConfigViewControllerProtocol?
     private var interactor: SearchConfigInteractorInputProtocol
+    private var articlesListWireframe: ArticlesListWireframe
     
 //    Wireframe of the next view
 //    private var wireframe: NextViewWireframeProtocol?
@@ -43,10 +44,11 @@ class SearchConfigPresenter: BasePresenter, SearchConfigPresenterProtocol, Searc
     
     // MARK: - Object lifecycle
     
-    init(view: SearchConfigViewControllerProtocol, interactor: SearchConfigInteractorInputProtocol) {
+    init(view: SearchConfigViewControllerProtocol, interactor: SearchConfigInteractorInputProtocol, articlesListWireframe: ArticlesListWireframe) {
         
         self.view = view
         self.interactor = interactor
+        self.articlesListWireframe = articlesListWireframe
         super.init(baseView: view)
     }
     
@@ -79,7 +81,7 @@ class SearchConfigPresenter: BasePresenter, SearchConfigPresenterProtocol, Searc
         if let typeOfArticle = TypeOfArticle(rawValue: typeOfArticle),
             let period = Period(rawValue: period) {
             let searchModel = SearchModel(typeOfArticle: typeOfArticle, period: period, sharedFacebook: sharedFacebook, sharedTwitter: sharedTwitter)
-            print(searchModel)
+            self.articlesListWireframe.push(searchModel: searchModel)
         }
     }
     

@@ -33,23 +33,23 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIN-Dx-4gR">
-                        <rect key="frame" x="74" y="40" width="230" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIN-Dx-4gR">
+                        <rect key="frame" x="74" y="40" width="230" height="45.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm7-q6-wyd">
-                        <rect key="frame" x="262" y="11" width="42" height="21"/>
+                        <rect key="frame" x="262" y="11" width="42" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="eXW-av-MGy"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.036971997103413881" green="0.0" blue="0.88702234455958551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He6-Tt-9hS">
-                        <rect key="frame" x="16" y="69" width="288" height="45"/>
+                        <rect key="frame" x="16" y="93.5" width="288" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -61,7 +61,8 @@
                     <constraint firstAttribute="trailingMargin" secondItem="He6-Tt-9hS" secondAttribute="trailing" id="9dB-xH-JPV"/>
                     <constraint firstItem="Tm7-q6-wyd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="VFJ-Ye-xGe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="TIN-Dx-4gR" secondAttribute="trailing" id="VXu-xM-u28"/>
-                    <constraint firstItem="He6-Tt-9hS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TIN-Dx-4gR" secondAttribute="bottom" constant="8" id="cBf-FN-Etf"/>
+                    <constraint firstItem="He6-Tt-9hS" firstAttribute="top" secondItem="TIN-Dx-4gR" secondAttribute="bottom" constant="8" id="WeA-dN-IxQ"/>
+                    <constraint firstItem="He6-Tt-9hS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nVL-69-jlK" secondAttribute="bottom" constant="8" id="cBf-FN-Etf"/>
                     <constraint firstItem="TIN-Dx-4gR" firstAttribute="leading" secondItem="nVL-69-jlK" secondAttribute="trailing" constant="8" id="cm5-7m-fCa"/>
                     <constraint firstAttribute="bottomMargin" secondItem="He6-Tt-9hS" secondAttribute="bottom" constant="8" id="h2t-WT-JrQ"/>
                     <constraint firstItem="Tm7-q6-wyd" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="oY8-FT-qYC"/>
@@ -69,7 +70,6 @@
                     <constraint firstItem="nVL-69-jlK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pFJ-69-Xxo"/>
                     <constraint firstItem="Nrz-DD-5zL" firstAttribute="leading" secondItem="nVL-69-jlK" secondAttribute="trailing" constant="8" id="rI1-ZW-ZbW"/>
                     <constraint firstItem="nVL-69-jlK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="tFF-2r-mXX"/>
-                    <constraint firstItem="He6-Tt-9hS" firstAttribute="top" secondItem="nVL-69-jlK" secondAttribute="bottom" constant="8" id="xnP-cs-zCj"/>
                     <constraint firstItem="Nrz-DD-5zL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="yU2-iX-8bh"/>
                 </constraints>
             </tableViewCellContentView>

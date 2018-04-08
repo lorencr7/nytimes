@@ -53,6 +53,7 @@ class ArticlesListViewController: BaseViewController, ArticlesListViewController
     // MARK: - Private methods
     
     private func configViews() {
+        self.title = "Articles".localized
         self.configTableView()
         self.presenter?.getArticles()
         

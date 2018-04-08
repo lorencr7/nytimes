@@ -12,12 +12,36 @@ enum TypeOfArticle: String {
     case mostEmailed = "Most Emailed"
     case mostShared = "Most Shared"
     case mostViewed = "Most Viewed"
+    
+    var urlKey: String {
+        switch self {
+        case .mostShared:
+            return "mostshared"
+        case .mostEmailed:
+            return "mostemailed"
+        case .mostViewed:
+            return "mostviewed"
+            
+        }
+    }
 }
 
 enum Period: String {
     case oneDay = "1 day"
     case sevenDays = "7 days"
     case thirtyDays = "30 days"
+    
+    var urlKey: String {
+        switch self {
+        case .oneDay:
+            return "1"
+        case .sevenDays:
+            return "7"
+        case .thirtyDays:
+            return "30"
+            
+        }
+    }
 }
 
 struct SearchModel {

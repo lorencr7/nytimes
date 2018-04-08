@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    static let isMock: Bool = true //TODO esta variable deberia depender de un entorno mock
+    static let isMock: Bool = false //TODO esta variable deberia depender de un entorno mock
 
     var window: UIWindow?
 

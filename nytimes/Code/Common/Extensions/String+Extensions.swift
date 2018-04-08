@@ -14,5 +14,12 @@ extension String {
     public var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+    
+    func toDate(with format: String = "ddMMyyyy", localeIdentifier: String = "es_ES") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: localeIdentifier)
+        dateFormatter.dateFormat = format
+        return dateFormatter.date(from: self)
+    }
 
 }

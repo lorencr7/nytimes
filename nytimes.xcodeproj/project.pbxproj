@@ -23,6 +23,13 @@
 		450E6B2C207A45D300A2B29A /* BaseWireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E6B1F207A45D300A2B29A /* BaseWireframeProtocol.swift */; };
 		4525F198207A49D600D50B22 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F197207A49D600D50B22 /* String+Extensions.swift */; };
 		4525F19B207A548200D50B22 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F19A207A548200D50B22 /* SearchModel.swift */; };
+		4525F1A5207A578000D50B22 /* ArticlesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F19E207A578000D50B22 /* ArticlesListPresenter.swift */; };
+		4525F1A6207A578000D50B22 /* ArticlesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F19F207A578000D50B22 /* ArticlesListViewController.swift */; };
+		4525F1A7207A578000D50B22 /* ArticlesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F1A0207A578000D50B22 /* ArticlesListInteractor.swift */; };
+		4525F1A8207A578000D50B22 /* ArticlesListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F1A1207A578000D50B22 /* ArticlesListAPIClient.swift */; };
+		4525F1A9207A578000D50B22 /* ArticlesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525F1A2207A578000D50B22 /* ArticlesListView.xib */; };
+		4525F1AA207A578000D50B22 /* ArticlesListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F1A3207A578000D50B22 /* ArticlesListDataManager.swift */; };
+		4525F1AB207A578000D50B22 /* ArticlesListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525F1A4207A578000D50B22 /* ArticlesListWireframe.swift */; };
 		45E0969E207A42B700D4936E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0969D207A42B700D4936E /* AppDelegate.swift */; };
 		45E096A5207A42B700D4936E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E096A4207A42B700D4936E /* Assets.xcassets */; };
 		45E096A8207A42B700D4936E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E096A6207A42B700D4936E /* LaunchScreen.storyboard */; };
@@ -67,6 +74,13 @@
 		450E6B1F207A45D300A2B29A /* BaseWireframeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframeProtocol.swift; sourceTree = "<group>"; };
 		4525F197207A49D600D50B22 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4525F19A207A548200D50B22 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		4525F19E207A578000D50B22 /* ArticlesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListPresenter.swift; sourceTree = "<group>"; };
+		4525F19F207A578000D50B22 /* ArticlesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewController.swift; sourceTree = "<group>"; };
+		4525F1A0207A578000D50B22 /* ArticlesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListInteractor.swift; sourceTree = "<group>"; };
+		4525F1A1207A578000D50B22 /* ArticlesListAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListAPIClient.swift; sourceTree = "<group>"; };
+		4525F1A2207A578000D50B22 /* ArticlesListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesListView.xib; sourceTree = "<group>"; };
+		4525F1A3207A578000D50B22 /* ArticlesListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListDataManager.swift; sourceTree = "<group>"; };
+		4525F1A4207A578000D50B22 /* ArticlesListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListWireframe.swift; sourceTree = "<group>"; };
 		45E0969A207A42B700D4936E /* nytimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nytimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E0969D207A42B700D4936E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E096A4207A42B700D4936E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				450E6B11207A45D300A2B29A /* Common */,
+				4525F19D207A56F800D50B22 /* ArticlesList */,
 				450E6B02207A458200A2B29A /* SearchConfig */,
 			);
 			path = Modules;
@@ -135,7 +150,6 @@
 		450E6B02207A458200A2B29A /* SearchConfig */ = {
 			isa = PBXGroup;
 			children = (
-				4525F199207A547300D50B22 /* Model */,
 				4525F192207A485400D50B22 /* View */,
 				450E6B03207A459800A2B29A /* SearchConfigPresenter.swift */,
 				450E6B05207A459800A2B29A /* SearchConfigInteractor.swift */,
@@ -192,6 +206,29 @@
 				4525F19A207A548200D50B22 /* SearchModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4525F19D207A56F800D50B22 /* ArticlesList */ = {
+			isa = PBXGroup;
+			children = (
+				4525F199207A547300D50B22 /* Model */,
+				4525F1AC207A578300D50B22 /* View */,
+				4525F19E207A578000D50B22 /* ArticlesListPresenter.swift */,
+				4525F1A0207A578000D50B22 /* ArticlesListInteractor.swift */,
+				4525F1A1207A578000D50B22 /* ArticlesListAPIClient.swift */,
+				4525F1A3207A578000D50B22 /* ArticlesListDataManager.swift */,
+				4525F1A4207A578000D50B22 /* ArticlesListWireframe.swift */,
+			);
+			path = ArticlesList;
+			sourceTree = "<group>";
+		};
+		4525F1AC207A578300D50B22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4525F19F207A578000D50B22 /* ArticlesListViewController.swift */,
+				4525F1A2207A578000D50B22 /* ArticlesListView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		45E09691207A42B700D4936E = {
@@ -388,6 +425,7 @@
 				450E6B0E207A459800A2B29A /* SearchConfigView.xib in Resources */,
 				45E096A8207A42B700D4936E /* LaunchScreen.storyboard in Resources */,
 				45E096A5207A42B700D4936E /* Assets.xcassets in Resources */,
+				4525F1A9207A578000D50B22 /* ArticlesListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,8 +601,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				450E6B20207A45D300A2B29A /* BaseWireframe.swift in Sources */,
+				4525F1A5207A578000D50B22 /* ArticlesListPresenter.swift in Sources */,
 				450E6B0F207A459800A2B29A /* SearchConfigDataManager.swift in Sources */,
 				450E6B27207A45D300A2B29A /* BaseAPIClient.swift in Sources */,
+				4525F1A6207A578000D50B22 /* ArticlesListViewController.swift in Sources */,
 				4525F19B207A548200D50B22 /* SearchModel.swift in Sources */,
 				450E6B22207A45D300A2B29A /* BaseViewController.swift in Sources */,
 				450E6B0B207A459800A2B29A /* SearchConfigViewController.swift in Sources */,
@@ -573,9 +613,13 @@
 				450E6B10207A459800A2B29A /* SearchConfigWireframe.swift in Sources */,
 				4525F198207A49D600D50B22 /* String+Extensions.swift in Sources */,
 				450E6B0A207A459800A2B29A /* SearchConfigPresenter.swift in Sources */,
+				4525F1A8207A578000D50B22 /* ArticlesListAPIClient.swift in Sources */,
+				4525F1A7207A578000D50B22 /* ArticlesListInteractor.swift in Sources */,
 				450E6B0C207A459800A2B29A /* SearchConfigInteractor.swift in Sources */,
+				4525F1AA207A578000D50B22 /* ArticlesListDataManager.swift in Sources */,
 				450E6B21207A45D300A2B29A /* BaseDataManager.swift in Sources */,
 				450E6B2C207A45D300A2B29A /* BaseWireframeProtocol.swift in Sources */,
+				4525F1AB207A578000D50B22 /* ArticlesListWireframe.swift in Sources */,
 				450E6B0D207A459800A2B29A /* SearchConfigAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

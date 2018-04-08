@@ -21,14 +21,12 @@ class ArticlesListAPIClient: BaseAPIClient, ArticlesListAPIClientProtocol {
     private static let baseURL = "https://api.nytimes.com/svc/mostpopular/v2"
     private static let apiKey = "32534511931e4dc1b5627b6918ca0d6b"
     
+    // TODO: Me daba error al bajarme el json del swagger del api, asi que hago la llamada a mano
     // MARK: - ArticlesListAPIClientProtocol
     func getArticles(searchModel: SearchModel, success: @escaping ([ArticleModel]) -> Void, failure: @escaping () -> Void) {
         let url = ArticlesListAPIClient.baseURL + "/" + searchModel.typeOfArticle.urlKey + "/all-sections/" + searchModel.period.urlKey + ".json" + "?api-key=" + ArticlesListAPIClient.apiKey
         print(url)
         Alamofire.request(url).responseJSON { response in
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
             
             if let json = response.result.value as? [String: Any] {
                 if let results = json["results"] as? [Any] {
@@ -53,18 +51,30 @@ class ArticlesListAPIClient: BaseAPIClient, ArticlesListAPIClientProtocol {
                                 articleModel.publishDate = publishedDate.toDate(with: "yyyy-MM-dd")
                             }
                             
+                            if let medias = resultDictionary["media"]  as? [[String:Any]] {
+                                for media in medias {
+                                    if let metadatas = media["media-metadata"] as? [[String: Any]] {
+                                        for metadata in metadatas {
+                                            if let format = metadata["format"] as? String,
+                                                format == "Standard Thumbnail",
+                                                let imageUrlString = metadata["url"] as? String {
+                                                articleModel.image = URL(string: imageUrlString)
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
                             
                             articles.append(articleModel)
                         }
                     }
                     success(articles)
                 }
-                print("JSON: \(json)") // serialized json response
+            } else {
+                failure()
             }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
         }
         
     }

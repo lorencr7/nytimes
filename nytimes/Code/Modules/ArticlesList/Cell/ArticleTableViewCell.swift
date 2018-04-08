@@ -46,7 +46,6 @@ class ArticleTableViewCell: UITableViewCell {
         if let thumbnail = articleViewModel.thumbnail {
             self.ivThumbnail.image = thumbnail
         } else if let imageUrl = articleViewModel.imageUrl{
-            print("downloading " + imageUrl.absoluteString)
             self.request = Alamofire.request(imageUrl).responseImage { response in
                 guard response.result.value != nil else {
                     return

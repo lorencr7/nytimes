@@ -18,6 +18,9 @@ protocol ArticlesListViewControllerProtocol: BaseViewControllerProtocol {
     
     func set(presenter: ArticlesListPresenterProtocol)
     func showArticles(articles: [ArticleViewModel])
+    func showLoading()
+    
+    func hideLoading()
 }
 
 
@@ -29,6 +32,7 @@ class ArticlesListViewController: BaseViewController, ArticlesListViewController
     private var articles: [ArticleViewModel] = [ArticleViewModel]()
     
     @IBOutlet weak var tvArticles: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Object lifecycle
     
@@ -48,6 +52,18 @@ class ArticlesListViewController: BaseViewController, ArticlesListViewController
     func showArticles(articles: [ArticleViewModel]) {
         self.articles = articles
         self.tvArticles.reloadData()
+    }
+    
+    func showLoading() {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+        self.tvArticles.isHidden = true
+    }
+    
+    func hideLoading() {
+        self.activityIndicator.isHidden = true
+        self.activityIndicator.stopAnimating()
+        self.tvArticles.isHidden = false
     }
     
     // MARK: - Private methods

@@ -49,6 +49,7 @@ class ArticlesListPresenter: BasePresenter, ArticlesListPresenterProtocol, Artic
     // MARK: - ArticlesListPresenterProtocol
     
     func getArticles() {
+        self.view?.showLoading()
         self.interactor.getArticles()
     }
     
@@ -59,6 +60,7 @@ class ArticlesListPresenter: BasePresenter, ArticlesListPresenterProtocol, Artic
             return ArticleViewModel(articleModel: articleModel)
         }
         self.view?.showArticles(articles: articlesModel)
+        self.view?.hideLoading()
     }
     
 }

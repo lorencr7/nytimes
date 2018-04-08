@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticlesListViewController" customModule="nytimes" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="q4a-86-5Ph" id="bGD-7Y-BJD"/>
                 <outlet property="tvArticles" destination="yxT-lK-7Qu" id="Who-sM-ed7"/>
                 <outlet property="view" destination="9JP-JY-ND5" id="eYh-J8-L7I"/>
             </connections>
@@ -25,10 +26,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-86-5Ph">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="1Ga-wb-UPx" firstAttribute="trailing" secondItem="yxT-lK-7Qu" secondAttribute="trailing" id="16X-eO-OFl"/>
+                <constraint firstItem="q4a-86-5Ph" firstAttribute="centerX" secondItem="9JP-JY-ND5" secondAttribute="centerX" id="KhT-nZ-Azt"/>
+                <constraint firstItem="q4a-86-5Ph" firstAttribute="centerY" secondItem="9JP-JY-ND5" secondAttribute="centerY" id="al7-Jt-CdC"/>
                 <constraint firstItem="1Ga-wb-UPx" firstAttribute="bottom" secondItem="yxT-lK-7Qu" secondAttribute="bottom" id="ede-ks-CMo"/>
                 <constraint firstItem="yxT-lK-7Qu" firstAttribute="top" secondItem="9JP-JY-ND5" secondAttribute="top" id="kwJ-oE-A5R"/>
                 <constraint firstItem="yxT-lK-7Qu" firstAttribute="leading" secondItem="1Ga-wb-UPx" secondAttribute="leading" id="sh4-7F-ZTY"/>

@@ -12,6 +12,7 @@ protocol ArticlesListDataManagerProtocol: class {
     /**
      * Add here your methods for communication INTERACTOR -> DATA_MANAGER
      */
+    func getArticles(success: @escaping ([ArticleModel]) -> Void, failure: @escaping () -> Void)
 }
 
 
@@ -33,6 +34,12 @@ class ArticlesListDataManager: BaseDataManager, ArticlesListDataManagerProtocol 
     
     
     // MARK: - ArticlesListDataManagerProtocol
+    
+    func getArticles(success: @escaping ([ArticleModel]) -> Void, failure: @escaping () -> Void) {
+        if let searchModel = self.searchModel {
+            self.apiClient.getArticles(searchModel: searchModel,success: success, failure: failure)
+        }
+    }
 }
 
 

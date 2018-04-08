@@ -12,6 +12,8 @@ protocol ArticlesListPresenterProtocol: class {
     /**
      * Add here your methods for communication VIEW -> PRESENTER
      */
+    
+    func getArticles()
 }
 
 protocol ArticlesListInteractorOutputProtocol: class, BaseInteractorOutputProtocol {
@@ -19,6 +21,7 @@ protocol ArticlesListInteractorOutputProtocol: class, BaseInteractorOutputProtoc
     /**
      * Add here your methods for communication INTERACTOR -> PRESENTER
      */
+    func showArticles(articles: [ArticleModel])
 }
 
 
@@ -45,9 +48,17 @@ class ArticlesListPresenter: BasePresenter, ArticlesListPresenterProtocol, Artic
     
     // MARK: - ArticlesListPresenterProtocol
     
-    
+    func getArticles() {
+        self.interactor.getArticles()
+    }
     
     // MARK: - ArticlesListPresenterInteractorOutputProtocol
     
+    func showArticles(articles: [ArticleModel]) {
+        let articlesModel = articles.map { (articleModel) -> ArticleViewModel in
+            return ArticleViewModel(articleModel: articleModel)
+        }
+        self.view?.showArticles(articles: articlesModel)
+    }
     
 }

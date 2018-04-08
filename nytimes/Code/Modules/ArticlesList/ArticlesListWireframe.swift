@@ -28,7 +28,8 @@ class ArticlesListWireframe: BaseWireframe, BaseWireframeProtocol {
         return viewController
     }
     
-    private var apiClient: ArticlesListAPIClient{
+    private var apiClient: ArticlesListAPIClientProtocol{
+        if AppDelegate.isMock { return ArticlesListMock()}
         return ArticlesListAPIClient()
     }
     

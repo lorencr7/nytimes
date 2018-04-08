@@ -14,6 +14,7 @@ protocol ArticlesListInteractorInputProtocol: class {
      */
     
     func set(presenter: ArticlesListInteractorOutputProtocol)
+    func getArticles()
 }
 
 
@@ -39,4 +40,13 @@ class ArticlesListInteractor: ArticlesListInteractorInputProtocol {
         
         self.presenter = presenter
     }
+    
+    func getArticles() {
+        self.dataManager.getArticles(success: { (articles: [ArticleModel]) in
+            self.presenter?.showArticles(articles: articles)
+        }) { 
+            //TODO manage error
+        }
+    }
+    
 }

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticlesListViewController" customModule="nytimes" customModuleProvider="target">
             <connections>
+                <outlet property="tvArticles" destination="yxT-lK-7Qu" id="Who-sM-ed7"/>
                 <outlet property="view" destination="9JP-JY-ND5" id="eYh-J8-L7I"/>
             </connections>
         </placeholder>
@@ -18,7 +20,19 @@
         <view contentMode="scaleToFill" id="9JP-JY-ND5">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yxT-lK-7Qu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Ga-wb-UPx" firstAttribute="trailing" secondItem="yxT-lK-7Qu" secondAttribute="trailing" id="16X-eO-OFl"/>
+                <constraint firstItem="1Ga-wb-UPx" firstAttribute="bottom" secondItem="yxT-lK-7Qu" secondAttribute="bottom" id="ede-ks-CMo"/>
+                <constraint firstItem="yxT-lK-7Qu" firstAttribute="top" secondItem="9JP-JY-ND5" secondAttribute="top" id="kwJ-oE-A5R"/>
+                <constraint firstItem="yxT-lK-7Qu" firstAttribute="leading" secondItem="1Ga-wb-UPx" secondAttribute="leading" id="sh4-7F-ZTY"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="1Ga-wb-UPx"/>
             <point key="canvasLocation" x="310" y="-626"/>
         </view>

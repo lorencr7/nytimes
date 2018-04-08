@@ -14,10 +14,13 @@ class ArticlesListWireframe: BaseWireframe, BaseWireframeProtocol {
     
     // MARK: - Properties
     
+    private var searchModel: SearchModel?
+    
     private var viewController: ArticlesListViewController {
         
         // Generating module components
         let viewController: ArticlesListViewController = ArticlesListViewController(nibName: "ArticlesListView", bundle: nil)
+
         let interactor: ArticlesListInteractor = createInteractor(with: dataManager)
         let presenter: ArticlesListPresenter = createPresenter(with: viewController, interactor: interactor)
         viewController.set(presenter: presenter)
@@ -30,7 +33,7 @@ class ArticlesListWireframe: BaseWireframe, BaseWireframeProtocol {
     }
     
     private var dataManager: ArticlesListDataManager{
-        return ArticlesListDataManager(apiClient: apiClient)
+        return ArticlesListDataManager(apiClient: apiClient, searchModel: searchModel)
     }
     
     
@@ -46,9 +49,11 @@ class ArticlesListWireframe: BaseWireframe, BaseWireframeProtocol {
     
     // MARK: - BaseWireframeProtocol
     
-    func present() {
-        
+    func push(searchModel: SearchModel) {
+        self.searchModel = searchModel
+        super.push(viewController: viewController)
     }
+    
 }
 
 

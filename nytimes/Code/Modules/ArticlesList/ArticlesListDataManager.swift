@@ -20,13 +20,15 @@ class ArticlesListDataManager: BaseDataManager, ArticlesListDataManagerProtocol 
     // MARK: - Properties
     
     private var apiClient: ArticlesListAPIClientProtocol
+    private var searchModel: SearchModel?
     
     
     // MARK: - Object lifecycle
     
-    init(apiClient: ArticlesListAPIClientProtocol) {
+    init(apiClient: ArticlesListAPIClientProtocol, searchModel: SearchModel?) {
         
         self.apiClient = apiClient
+        self.searchModel = searchModel
     }
     
     

@@ -48,11 +48,10 @@ extension UIViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let window = appDelegate.window
-        let rootVc = window?.rootViewController
-        
-        if let vc = rootVc, let nav = vc.presentedViewController as? UINavigationController {
+        if let nav = window?.rootViewController as? UINavigationController {
             return nav
         }
+
         return nil
     }
     
